@@ -42,7 +42,7 @@ const App = () => {
         {incompleted.length === 0 && completed.length === 0 ? (
           <section className="empty">
             <article className="empty__box">
-              <img src="./static/images/empty.jpg" />
+              <img src="../static/images/empty.jpg" />
               <h6>Focus on your day</h6>
               <p>Get things done with my day, a list that refreshes every day.</p>
             </article>
