@@ -32,6 +32,7 @@ body::before {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  position: relative;
 }
 
 header {
@@ -67,7 +68,8 @@ footer {
   color: #fff;
 }
 
-footer input {
+input,
+textarea {
   width: 100%;
   padding: 1rem 1rem 1rem 3rem;
   display: inline-block;
@@ -77,6 +79,11 @@ footer input {
   outline: none;
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
+}
+
+textarea {
+  padding: 1rem;
+  resize: none;
 }
 
 .icon_float {
@@ -105,6 +112,12 @@ footer input {
   border-radius: 0.5rem;
 }
 
+.empty__box .image {
+  background: url("../images/empty.png");
+  background-size: cover;
+  height: 200px;
+}
+
 .empty img {
   width: 100%;
 }
@@ -131,9 +144,16 @@ footer input {
   align-items: center;
   gap: 1rem;
 }
+
+.icon {
+  cursor: pointer;
+}
+
 .list .list__item h6 {
   font-size: 0.75rem;
   font-weight: 200;
+  width: calc(100% - 70px);
+  cursor: pointer;
 }
 .list .list__item h6.completed {
   text-decoration: line-through;
@@ -146,10 +166,6 @@ footer input {
   font-size: 0.85rem;
 }
 
-.icon {
-  cursor: pointer;
-}
-
 .icon_sup {
   font-size: 2rem;
   cursor: pointer;
@@ -159,4 +175,72 @@ footer input {
   .container {
     max-width: 95%;
   }
+}
+
+/*  MODAL  */
+.base__modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 350px;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.75);
+  box-sizing: border-box;
+}
+.modal::-webkit-scrollbar {
+  width: 5px; /* Tamaño del scroll en vertical */
+  height: 5px; /* Tamaño del scroll en horizontal */
+}
+.modal::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 4px;
+}
+.modal::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+}
+
+.modal__container {
+  max-width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.modal__container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal__container-header p {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.modal__container-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+button {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 1px 1px 5px 0 rgba(255, 255, 255, 0.25);
 }
